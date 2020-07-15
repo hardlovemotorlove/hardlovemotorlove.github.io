@@ -1,3 +1,7 @@
+// AUTOPLAY
+
+document.getElementById('vid').play();
+
 // Smooth scroll
 
 $(document).ready(function() {
@@ -8,3 +12,18 @@ $(document).ready(function() {
         return false;
     });
 });
+
+
+//animations
+
+gsap.to('.loader', 2, {
+	delay: 1,
+	top: "-100%",
+	opacity: 0,
+	ease: Expo.easeInOut,
+});
+gsap.from('.content', {
+	delay: 2.2,
+	display: "none",
+});
+

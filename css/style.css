@@ -29,6 +29,27 @@ h1 {
 	color: var(--grey-color);
 }
 
+/*Loader*/
+.loader {
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1000;
+}
+
+.loader p {
+	color: white;
+	font-size: 8vw;
+	text-transform: uppercase;
+
+}
+
 /*Header*/
 
 header{
@@ -57,38 +78,39 @@ a, a:visited, a:hover, a:active {
 /*Section accueil*/
 section#accueil {
 	display : grid;
-	height: 87vh;
+	height: 100vh;
 	grid-template-columns: var(--columns);
 	grid-template-rows: auto auto auto auto 1fr;
 	grid-gap: 10px;
 }
 
 #accueil h1{
-	grid-column: 4/14;
+	grid-column: 2/14;
 	margin: 0;
 	margin-top: 60px;
 	line-height: 3.2rem;
 }
 
 #accueil p{
-	grid-column: 4/14;
+	grid-column: 2/14;
 	margin: 0;
 	margin-top: -15px;
 }
 
 #accueil .reseaux{
-	grid-column: 4/7;
+	grid-column: 2/7;
 	margin-bottom: 10px;
 	margin-top: -8px;
 }
 
 #accueil .illustration{
-	grid-column:3/15;
+	grid-column: 2/14;
+	margin-top: 50px;
 	height: 35vh;
 	overflow: hidden;
 }
 
-#accueil .illustration img {
+#accueil .illustration video {
 	position: relative;
 	top: -400px;
 }
@@ -106,7 +128,7 @@ section#accueil {
 }
 
 .icone_res{
-	width: 33px;
+	width: 45px;
 	margin-right: 5px;
 }
 
@@ -119,69 +141,23 @@ section#last_news{
 /*Section à propos*/
 section#contact{
 	display : grid;
-	height: 100vh;
+	height: 80vh;
 	grid-template-columns: var(--columns);
-	grid-template-rows: 50px 30px auto auto auto;
 	grid-gap: 10px;
 }
 
-#contact h2{
+#contact div{
 	grid-column: 2/14;
-	margin: 0;
+}
+
+#contact h3{
 	font-size: 2.5rem;
-	line-height: 3.2rem;
-	text-transform: uppercase;
 }
 
-#contact h2 ~ p {
-	grid-column: 2/14;
-	margin: 0;
-	margin-top: -20px;
-	font-size: 1.5rem;
-
-}
-
-#contact .illustration{
-	grid-column: 2/15;
-	height: 250px;
-	overflow: hidden;
-}
-
-#contact . illustration img {
-	width: 100%;
-	position: relative;
-
-}
-
-#contact > div:nth-of-type(2){
-	grid-column: 3/12;
-}
-
-#contact >div:nth-of-type(2) h3{
-	font-size: 1.6rem;
-	margin-top: 0px;
-}
-
-#contact >div:nth-of-type(2) p{
+#contact div p {
 	font-family: 'IBM Plex Sans', sans-serif;
-}
-
-#contact > div:nth-of-type(3){
-	font-family: 'IBM Plex Sans', sans-serif;
-/*	height: 100px;*/
-	margin: 0;
-	grid-column: 3/11;
-	margin-bottom: 30px;
-	margin-top: 5px;
-}
-
-#contact > div:nth-of-type(3) > span:nth-of-type(3){
-	margin-top: 30px;
-	padding-top: 20px;
-}
-
-#contact >div:nth-of-type(3) > span:nth-of-type(2n){
-	color: var(--grey-color);
+	margin-top: 40px;
+	font-size: 1.4rem;
 }
 
 /*Footer*/
@@ -189,12 +165,12 @@ footer{
 	margin-top: 4vh;
 	display: grid;
 	grid-template-columns: var(--columns);
-	grid-template-rows: repeat(2,70px);
+	grid-template-rows: 70px 30px;
 	grid-gap: 10px;
 }
 
 footer .reseaux{
-	grid-column: 3/6;
+	grid-column: 2/5;
 	grid-row: 1;
 	align-self: center;
 }
