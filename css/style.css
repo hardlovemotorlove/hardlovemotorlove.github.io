@@ -122,15 +122,26 @@ section#accueil {
 	margin-right: auto;
 }
 
+.reseaux a:hover{
+	cursor: default;	
+}
+
 #accueil > a img {
 	margin-top: 4vh;
 	height: 8vh;
 }
 
 .icone_res{
-	width: 45px;
+	width: 40px;
 	margin-right: 5px;
+	transition: all .8s ease;
 }
+
+.icone_res:hover{
+	fill: red;
+	transform: rotate(360deg) scale(0.9);
+}
+
 
 /*Section news*/
 section#last_news{
@@ -157,7 +168,7 @@ section#contact{
 #contact div p {
 	font-family: 'IBM Plex Sans', sans-serif;
 	margin-top: 40px;
-	font-size: 1.4rem;
+	font-size: 1.1rem;
 }
 
 /*Footer*/
@@ -222,7 +233,6 @@ footer div:nth-of-type(2) p:nth-of-type(2){
 
 	/*Section accueil*/
 	section#accueil {
-		display : grid;
 		height: 95vh;
 	}
 	#accueil h1{
@@ -259,17 +269,12 @@ footer div:nth-of-type(2) p:nth-of-type(2){
 
 	/*Section à propos*/
 	section#contact{
-		height: 70vh;
-		grid-template-rows: 45vh 20vh;
+		height: 90vh;
 		font-size:2.5vh;
 	}
 
-	#contact > div:nth-of-type(2), #contact > div:nth-of-type(2){
+	#contact div {
 	grid-column: 2/14;
-	}
-
-	#contact >div:nth-of-type(3){
-		margin-top: 3vh;
 	}
 
 	/*Section footer*/
