@@ -134,6 +134,7 @@ section#accueil {
 .icone_res{
 	width: 40px;
 	margin-right: 5px;
+	overflow: hidden;
 	transition: all .8s ease;
 }
 
