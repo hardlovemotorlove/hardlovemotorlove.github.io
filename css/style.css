@@ -122,10 +122,6 @@ section#accueil {
 	margin-right: auto;
 }
 
-.reseaux a:hover{
-	cursor: default;	
-}
-
 #accueil > a img {
 	margin-top: 4vh;
 	height: 8vh;
@@ -138,7 +134,6 @@ section#accueil {
 }
 
 .icone_res:hover{
-	fill: red;
 	transform: rotate(360deg) scale(0.9);
 }
 
