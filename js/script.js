@@ -1,3 +1,5 @@
+gsap.registerPlugin(ScrollTrigger);
+
 $(document).ready(function() {
 	smoothScroll();
 	loader();
@@ -41,7 +43,6 @@ function loader() {
 	}, "<")
 	.from('#accueil .reseaux .icone_res', {
 		opacity: 0,
-		y: 20,
 		ease: Power4.easeInOut,
 		stagger: {
 			each: 0.1,
@@ -50,20 +51,31 @@ function loader() {
 }
 
 
-// video parallax 
+// first parallax 
 
-let tl = gsap.timeline();
-tl.to("#accueil .illustration", 1, {y: 50})
-tl.to("#accueil .illustration video", 1, {y: 100}, '<' )
-tl.to("#accueil h1", {y: -25}, '<')
-tl.to("#accueil p", {opacity: 0}, '<');
+let tl1 = gsap.timeline({
+	scrollTrigger: {
+		trigger: '#accueil',
+		scrub: .5,
+		start:"top top",
+		end:'bottom 0px',
+	},
+});
+tl1.to("#accueil .illustration", 1, {y: 50})
+tl1.to("#accueil .illustration video", 1, {y: 100}, '<' )
+tl1.to("#accueil h1", {y: -25, opacity: 0.3}, '<')
+tl1.to("#accueil p", {opacity: 0.3}, '<');
 
-let controller = new ScrollMagic.Controller();
-let scene = new ScrollMagic.Scene({
-	triggerElement: 'section#accueil',
-	duration: $('section#accueil').height(),
-	triggerHook: 0,
-})
-	.setTween(tl)
-	.addTo(controller);
+// Fondu footer
+
+gsap.from('section#contact', 3, {
+	scrollTrigger: {
+		trigger: '#contact',
+		start:"5% center",
+		toggleActions:'play none none none'
+	},
+	opacity: 0, 
+	ease: Power2.out
+});
+
 
